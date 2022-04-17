@@ -41,11 +41,11 @@
         <meta name="theme-color" content="#ffffff">
 
         <!-- Sweet Alert -->
-
-        <link type="text/css" href="{{ asset('./vendor/sweetalert2/dist/sweetalert2.min.css') }}" rel="stylesheet">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
+        <link type="text/css" href="{{ asset('./vendor/sweetalert2/dist/sweetalert2.min.css') }}" rel="stylesheet">
+
         <!-- Notyf -->
         <link type="text/css" href="{{ asset('./vendor/notyf/notyf.min.css') }}" rel="stylesheet">
 

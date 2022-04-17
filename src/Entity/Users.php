@@ -39,7 +39,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private $telephone;
 
     #[ORM\Column(type: 'integer')]
-    private $solde;
+    private $solde=5000;
 
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
