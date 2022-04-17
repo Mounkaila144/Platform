@@ -26,6 +26,10 @@
                             <div class="text-center text-md-center mb-4 mt-md-0">
                                 <h1 class="mb-0 h3">Creé un compte </h1>
                             </div>
+
+                            {% for flash_error in app.flashes('verify_email_error') %}
+                                <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+                            {% endfor %}
                             {{ form_start(registrationForm,{'attr':{'class':'mt-4'  }}) }}
                             <!-- Form -->
                             <div class="form-group mb-4">
@@ -122,11 +126,6 @@
 
 
 
-    {% for flash_error in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
-
-    <h1>Register</h1>
 
 
 
