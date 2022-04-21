@@ -20,7 +20,7 @@ function Panier() {
     const auth = useAuthUser()
     const [aalert,setAlert]=useState(false)
     const [c, setC] = useState(0);
-    const url = `https://allcine227.com/api/commandes`
+    const url = `https://127.0.0.1:8000/api/commandes`
     const token = localStorage.getItem('token')
     const headers = {
         'authorization': `Bearer ${token}`,
@@ -30,12 +30,15 @@ function Panier() {
 
     const onSubmit = (e) => {
         e.preventDefault()
-        axios
-            .post(
-                url,
-                {"panier": {items, cartTotal}},
-                {headers: headers}
-            )
+        axios.all([
+            axios.post(
+            url,
+            {"panier": {items, cartTotal}},
+            {headers: headers}
+        ),
+        axios.put()
+        ])
+
             .then((res) => {
                 if (res.status === 201) {
                     emptyCart()
@@ -81,7 +84,6 @@ function Panier() {
             <Grid container spacing={{xs: 1, md: 1}} columns={{xs: 12, sm: 12, md: 12}} alignContent={"center"}
                   justifyContent={'center'}>
                 <Grid item xs={12} sm={6} md={12}>
-                    <h1>Reduction {nb("film")} CFA</h1>
                     <Box component="div" sx={{overflow: 'auto', color: orange[900], fontSize: 22, marginBottom:2,marginTop:2}}>
                         Prix Total {cartTotal} CFA
                     </Box>
@@ -107,7 +109,7 @@ function Panier() {
                                      color:orange[800],
                                  }}>
                                 {item.type + ':' + item.price + " CFA"}</Box>
-                            {item.type === 'materiel' ?
+                            {item.type === 'products' ?
                                 <><RemoveIcon onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
                                               sx={{color: "blue", borderRadius: 3}}/>
                                     <AddIcon onClick={() => updateItemQuantity(item.id, item.quantity + 1)}

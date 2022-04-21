@@ -163,30 +163,19 @@ export default function HeaderDesing(props) {
                     onClick={menu}
 
                 >
-                    Tarifs
+                    Menu
                 </Button>
-                <List>
-                    <NestedList name={"Film"}>
-                        <NestedBtn setOpen={setOpen} name={"Populair"} link={"/film/popular"}/>
-                        <NestedBtn setOpen={setOpen} name={"Nouveauté"} link={"/film/new"}/>
-                        <NestedBtn setOpen={setOpen} name={"plus vue"} link={"/film/top"}/>
-                        <NestedBtn setOpen={setOpen} name={"Trier par genre"} link={"/filmlist"}/>
-                    </NestedList>
-                    <NestedList name={"Serie"}>
-                        <NestedBtn setOpen={setOpen} name={"Populair"} link={"/serie/popular"}/>
-                        <NestedBtn setOpen={setOpen} name={"Nouveauté"} link={"/serie/new"}/>
-                        <NestedBtn setOpen={setOpen} name={"plus vue"} link={"/serie/top"}/>
-                        <NestedBtn setOpen={setOpen} name={"Trier par genre"} link={"/serielist"}/>
-                    </NestedList>
+               <Button
+                    variant="contained"
+                    sx={{
+                        my: 2, color: 'white', display: 'block', backgroundColor: pink[900]
+                    }}
+                    onClick={menu}
 
-                    <NestedList name={"Materiel"}>
-                        <NestedBtn setOpen={setOpen} name={"Original"} link={"/materiel/original"}/>
-                        <NestedBtn setOpen={setOpen} name={"Moyenne"} link={"/materiel/moyenne"}/>
-                        <NestedBtn setOpen={setOpen} name={"Moins chere"} link={"/materiel/moins"}/>
-                    </NestedList>
+                >
+                    Article
+                </Button>
 
-
-                </List>
                 {auth() ?
                     <Button
                         variant="contained"
@@ -201,7 +190,7 @@ export default function HeaderDesing(props) {
                     <Button
                         variant="contained"
                         sx={{
-                            my: 2, color: 'white', display: 'block', backgroundColor: pink[900],width:110
+                            my: 2, color: 'white', display: 'block', backgroundColor: pink[900],marginTop:5
                         }}
                         onClick={login}
 

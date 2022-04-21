@@ -34,7 +34,7 @@ export default function HeaderPhone() {
     }
 
     return (<HeaderDesing
-        logo={<img src={Allcine} width={150}/>}
+        logo={'Platform'}
         btnflexsm={<>
             <Button
                 variant="contained"
@@ -44,29 +44,19 @@ export default function HeaderPhone() {
                 onClick={handleClick}
 
             >
-                Tarifs
+                Menu
             </Button>
-            <Btnderoulan
-                name={"Film"}
-                name1={"populair"} lien1={"/film/popular"}
-                name2={"nouveauté"} lien2={"/film/new"}
-                name3={"plus vues"} lien3={"/film/top"}
-                name4={"Trier par genre"} lien4={"/filmlist"}
-            />
-            <Btnderoulan
-                name={"Serie"}
-                name1={"populair"} lien1={"/serie/popular"}
-                name2={"nouveauté"} lien2={"/serie/new"}
-                name3={"plus vues"} lien3={"/serie/top"}
-                name4={"Trier par genre"} lien4={"/serielist"}
-            />
-            <Btnderoulan
-                name={"Materiel"}
-                name1={"original"} lien1={"/materiel/original"}
-                name2={"Moyenne"} lien2={"/materiel/moyenne"}
-                name3={"Moins chere"} lien3={"/materiel/moins"}
-                name4={"Moins chere"} lien4={"/film/action"}
-            />
+            <Button
+                variant="contained"
+                sx={{
+                    my: 2, color: 'white', display: 'block', backgroundColor: pink[900], marginLeft: 2
+                }}
+                onClick={()=>navigate("/materiel/original")}
+
+            >
+                Article
+            </Button>
+
         </>}
         search={
             <>
@@ -74,7 +64,7 @@ export default function HeaderPhone() {
                     {auth() ?
                         <>
                             <Box sx={{display: {xs: 'flex', md: 'none'},width:150,height:45,marginTop:2}}>
-                                { <img src={Allcine}/>}
+                                {"Platform"}
                             </Box>
                             <Button
                                 variant="contained"
@@ -88,7 +78,7 @@ export default function HeaderPhone() {
                             </Button>
                         </> : <>
                             <Box sx={{display: {xs: 'flex', md: 'none'},width:130,height:35,marginTop:2}}>
-                                { <img src={Allcine}/>}
+                                { "Platform"}
                             </Box>
                             <Button
                                 variant="contained"

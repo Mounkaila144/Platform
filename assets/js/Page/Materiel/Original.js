@@ -8,6 +8,7 @@ import {Link} from "react-router-dom";
 import MaterialCard from "../../components/card/MaterialCard";
 import {SearchField} from "@react-spectrum/searchfield";
 import Search from "../../components/header/Search";
+import ArticleCard from "../../components/card/article";
 
 const Original = () => {
 
@@ -18,7 +19,7 @@ const Original = () => {
     const [page, setPage] = React.useState(1);
 
 
-    const url=`https://allcine227.com/api/articles.json?page=${page}`
+    const url=`https://127.0.0.1:8000/api/articles.json?page=${page}`
     const getData =async () => {
         axios
             .get(url,{
@@ -52,7 +53,7 @@ const Original = () => {
         return (
             <>
                 <Grid container spacing={{xs: 1, md: 1}} columns={{xs: 12, sm: 12, md: 12}}>
-                    <Grid item xs={8} sm={5} md={3} width={30}>
+                    <Grid item xs={12} sm={12} md={6} width={4}>
 
                         <Search/>
 
@@ -61,7 +62,7 @@ const Original = () => {
                 <Grid container spacing={{xs: 1, md: 1}} columns={{xs: 12, sm: 12, md: 12}}>
                     {product.map((products) => (
                         <Grid item xs={6} sm={4} md={2}>
-                                <MaterialCard sx={{boxShadow: 6,}}
+                                <ArticleCard sx={{boxShadow: 6,}}
                                               products={products}
                                 />
                         </Grid>
@@ -70,7 +71,6 @@ const Original = () => {
                 </Grid>
 
 
-                <Pagination count={pagecount} page={page} onChange={handleChange}  color="primary" />
 
             </>
     )
