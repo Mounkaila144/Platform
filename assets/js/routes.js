@@ -91,7 +91,7 @@ const RouteApp = () => {
                             )
                         }
                     </Route>
-                    <Route path="materiel" element={<App/>}>
+                    <Route path="react/materiel" element={<App/>}>
                         <Route path={"original"} element={<Original/>}/>
                         <Route path={":id"} element={<DetailMateriel/>}/>
 
@@ -113,7 +113,11 @@ const RouteApp = () => {
 
                         <Route
                             path="react/*"
-                            element={<Menu/>}
+                            element={
+                                <main style={{ padding: "1rem" }}>
+                                    <h1>There's nothing here!</h1>
+                                </main>
+                            }
                         />
                     </Route>
                 </Routes>

@@ -71,7 +71,7 @@ export default function ArticleCard({products}) {
                                 'type':'products'
                             })
                         } else {
-                            navigate(`/login`)
+                            navigate(`/react/login`)
                         }
                     }}
                 >
