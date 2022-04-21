@@ -31,10 +31,6 @@ security:
             pattern: ^/api/commandes
             stateless: true
             jwt: ~
-        users:
-            pattern: ^/api/users
-            stateless: true
-            jwt: ~
         main:
             lazy: true
             provider: app_user_provider
@@ -55,7 +51,6 @@ security:
     access_control:
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
         - { path: ^/api/commandes,       roles: IS_AUTHENTICATED_FULLY }
-        - { path: ^/api/users,       roles: IS_AUTHENTICATED_FULLY }
 
 
 when@test:
