@@ -35,11 +35,6 @@ security:
             pattern: ^/api/users
             stateless: true
             jwt: ~
-        articles:
-            pattern: ^/api/articles
-            stateless: true
-            jwt: ~
-
         main:
             lazy: true
             provider: app_user_provider
@@ -61,7 +56,6 @@ security:
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
         - { path: ^/api/commandes,       roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/api/users,       roles: IS_AUTHENTICATED_FULLY }
-        - { path: ^/api/articles,       roles: IS_AUTHENTICATED_FULLY }
 
 
 when@test:

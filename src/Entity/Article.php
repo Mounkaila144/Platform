@@ -13,12 +13,8 @@ use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
 #[Vich\Uploadable]
-#[ApiResource(
-    collectionOperations: ['put'],
-    itemOperations: ['put'],
-)
-
-]class Article
+#[ApiResource()]
+class Article
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

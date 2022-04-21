@@ -20,7 +20,7 @@ function Panier() {
     const auth = useAuthUser()
     const [aalert,setAlert]=useState(false)
     const [c, setC] = useState(0);
-    const url = `https://127.0.0.1:8000/api/commandes`
+    const url = `https://platform.allcine227.com/api/commandes`
     const token = localStorage.getItem('token')
     const headers = {
         'authorization': `Bearer ${token}`,
