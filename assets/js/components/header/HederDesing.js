@@ -175,7 +175,7 @@ export default function HeaderDesing(props) {
                     sx={{
                         my: 2, color: 'white', display: 'block', backgroundColor: blue[900]
                     }}
-                    onClick={menu}
+                    onClick={article}
 
                 >
                     Article
