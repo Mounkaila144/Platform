@@ -6,7 +6,7 @@ import NestedList from "../BtnSidebar";
 import NestedBtn from "../NestedBtn";
 import HeaderDesing from "./HederDesing";
 import Button from '@mui/material/Button';
-import {orange, pink} from "@mui/material/colors";
+import {orange, blue} from "@mui/material/colors";
 import {useIsAuthenticated, useSignOut} from 'react-auth-kit'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Allcine from './logo7.png'
@@ -25,7 +25,6 @@ export default function HeaderPhone() {
 
     function handleClick() {
         navigate(`/react/Menu`)
-        window.location.reload()
     }
 
     function register() {
@@ -39,7 +38,7 @@ export default function HeaderPhone() {
             <Button
                 variant="contained"
                 sx={{
-                    my: 2, color: 'white', display: 'block', backgroundColor: pink[900], marginLeft: 2
+                    my: 2, color: 'white', display: 'block', backgroundColor: blue[900], marginLeft: 2
                 }}
                 onClick={handleClick}
 
@@ -49,9 +48,9 @@ export default function HeaderPhone() {
             <Button
                 variant="contained"
                 sx={{
-                    my: 2, color: 'white', display: 'block', backgroundColor: pink[900], marginLeft: 2
+                    my: 2, color: 'white', display: 'block', backgroundColor: blue[900], marginLeft: 2
                 }}
-                onClick={()=>navigate("/materiel/original")}
+                onClick={()=>navigate("/react/materiel/original")}
 
             >
                 Article
@@ -69,7 +68,7 @@ export default function HeaderPhone() {
                             <Button
                                 variant="contained"
                                 sx={{
-                                    my: 2, color: 'white', display: 'block', backgroundColor: pink[900], marginLeft: 3
+                                    my: 2, color: 'white', display: 'block', backgroundColor: blue[900], marginLeft: 3
                                 }}
                                 onClick={() => navigate(`/react/panier`)}
 
@@ -83,7 +82,7 @@ export default function HeaderPhone() {
                             <Button
                                 variant="contained"
                                 sx={{
-                                    my: 2, color: 'white', display: 'block', backgroundColor: pink[900], marginLeft: 2,width:110
+                                    my: 2, color: 'white', display: 'block', backgroundColor: blue[900], marginLeft: 2,width:110
                                 }}
                                 onClick={() => navigate(`/react/login `)}
 
@@ -100,7 +99,7 @@ export default function HeaderPhone() {
                             <Button
                                 variant="contained"
                                 sx={{
-                                    my: 2, color: 'white', display: 'block', backgroundColor: pink[900], marginLeft: 2
+                                    my: 2, color: 'white', display: 'block', backgroundColor: blue[900], marginLeft: 2
                                 }}
                                 onClick={() => signOut()}
 
@@ -110,7 +109,7 @@ export default function HeaderPhone() {
                             <Button
                                 variant="contained"
                                 sx={{
-                                    my: 2, color: 'white', display: 'block', backgroundColor: pink[900], marginLeft: 2
+                                    my: 2, color: 'white', display: 'block', backgroundColor: blue[900], marginLeft: 2
                                 }}
                                 onClick={() => navigate(`/react/panier`)}
 
@@ -121,7 +120,7 @@ export default function HeaderPhone() {
                             <Button
                                 variant="contained"
                                 sx={{
-                                    my: 2, color: 'white', display: 'block', backgroundColor: pink[900], marginLeft: 2
+                                    my: 2, color: 'white', display: 'block', backgroundColor: blue[900], marginLeft: 2
                                 }}
                                 onClick={register}
 
@@ -131,7 +130,7 @@ export default function HeaderPhone() {
                             <Button
                                 variant="contained"
                                 sx={{
-                                    my: 2, color: 'white', display: 'block', backgroundColor: pink[900], marginLeft: 2
+                                    my: 2, color: 'white', display: 'block', backgroundColor: blue[900], marginLeft: 2
                                 }}
                                 onClick={() => navigate(`/react/login`)}
 

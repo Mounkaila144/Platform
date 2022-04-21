@@ -1,4 +1,4 @@
-import {grey, pink} from "@mui/material/colors";
+import {grey, blue, red} from "@mui/material/colors";
 import * as React from 'react';
 import {styled, useTheme} from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -98,6 +98,11 @@ export default function HeaderDesing(props) {
         navigate(`/react/menu `)
         setOpen(false);
     };
+    const article = () => {
+        navigate(`/react/materiel/original `)
+        setOpen(false);
+    };
+
     const login = () => {
         navigate(`/react/login `)
         setOpen(false);
@@ -111,7 +116,7 @@ export default function HeaderDesing(props) {
     return (
         <Box sx={{display: 'flex'}}>
             <AppBar position="fixed" open={open} sx={{
-                backgroundColor: grey[900],
+                backgroundColor: red[900],
                 borderRadius: 2
             }}>
                 <Toolbar>
@@ -140,7 +145,7 @@ export default function HeaderDesing(props) {
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
                         boxSizing: 'border-box',
-                        backgroundColor: grey[800],
+                        backgroundColor: red[800],
                         borderRadius: 2,
                         color: "white"
                     },
@@ -158,7 +163,7 @@ export default function HeaderDesing(props) {
                 <Button
                     variant="contained"
                     sx={{
-                        my: 2, color: 'white', display: 'block', backgroundColor: pink[900]
+                        my: 2, color: 'white', display: 'block', backgroundColor: blue[900]
                     }}
                     onClick={menu}
 
@@ -168,7 +173,7 @@ export default function HeaderDesing(props) {
                <Button
                     variant="contained"
                     sx={{
-                        my: 2, color: 'white', display: 'block', backgroundColor: pink[900]
+                        my: 2, color: 'white', display: 'block', backgroundColor: blue[900]
                     }}
                     onClick={menu}
 
@@ -180,7 +185,7 @@ export default function HeaderDesing(props) {
                     <Button
                         variant="contained"
                         sx={{
-                            my: 2, color: 'white', display: 'block', backgroundColor: pink[900]
+                            my: 2, color: 'white', display: 'block', backgroundColor: blue[900]
                         }}
                         onClick={deconexion}
 
@@ -190,7 +195,7 @@ export default function HeaderDesing(props) {
                     <Button
                         variant="contained"
                         sx={{
-                            my: 2, color: 'white', display: 'block', backgroundColor: pink[900],marginTop:5
+                            my: 2, color: 'white', display: 'block', backgroundColor: blue[900],marginTop:5
                         }}
                         onClick={login}
 

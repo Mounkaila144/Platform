@@ -32,7 +32,7 @@ export default function Menu() {
     return (
                     <Card>
                         <CardContent
-                            sx={{boxShadow: 3, bgcolor: pink[500], marginBottom: 2, justifyContent: 'center'}}>
+                            sx={{boxShadow: 3, marginBottom: 2, justifyContent: 'center'}}>
                             <Box component="div" sx={{overflow: 'auto', fontSize: 57, marginBottom: 2, marginTop: 2}}>
                                 Menu
                             </Box>

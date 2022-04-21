@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Header from "../components/header/index";
 import {Grid, Pagination} from "@mui/material";
 import * as PropTypes from "prop-types";
-import {grey} from "@mui/material/colors";
+import {green, grey, indigo} from "@mui/material/colors";
 import {useEffect, useState} from "react";
 import {Link, Outlet} from "react-router-dom";
 
@@ -27,6 +27,7 @@ export default function Home(props) {
     return (
         <Box
             sx={{
+                bgcolor:indigo[900],
                 width: '100%',
                 '& > .MuiBox-root > .MuiBox-root': {
                     p: 1,
@@ -49,7 +50,7 @@ export default function Home(props) {
                 <Box sx={{gridArea: 'header'}}>{props.top}</Box>
                 <Box
                     sx={{
-                        bgcolor: grey[900],
+                        bgcolor: indigo[900],
                         marginTop:7,
                         gridArea: 'main'
 
