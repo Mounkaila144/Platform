@@ -9,8 +9,9 @@ import Button from '@mui/material/Button';
 import {orange, blue} from "@mui/material/colors";
 import {useIsAuthenticated, useSignOut} from 'react-auth-kit'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import Allcine from './logo7.png'
+import Platform from './logo.png'
 import Box from "@mui/material/Box";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 
 
@@ -24,7 +25,7 @@ export default function HeaderPhone() {
     let navigate = useNavigate();
 
     function handleClick() {
-        navigate(`/react/Menu`)
+        navigate(`/Menu`)
     }
 
     function register() {
@@ -33,7 +34,7 @@ export default function HeaderPhone() {
     }
 
     return (<HeaderDesing
-        logo={'Platform'}
+        logo={<img src={Platform} width={60} alt={"Platform"}/>}
         btnflexsm={<>
             <Button
                 variant="contained"
@@ -50,7 +51,7 @@ export default function HeaderPhone() {
                 sx={{
                     my: 2, color: 'white', display: 'block', backgroundColor: blue[900], marginLeft: 2
                 }}
-                onClick={()=>navigate("/react/materiel/original")}
+                onClick={()=>navigate("/materiel/original")}
 
             >
                 Article
@@ -70,7 +71,7 @@ export default function HeaderPhone() {
                                 sx={{
                                     my: 2, color: 'white', display: 'block', backgroundColor: blue[900], marginLeft: 3
                                 }}
-                                onClick={() => navigate(`/react/panier`)}
+                                onClick={() => navigate(`/panier`)}
 
                             >
                                 <ShoppingCartIcon/>
@@ -84,7 +85,7 @@ export default function HeaderPhone() {
                                 sx={{
                                     my: 2, color: 'white', display: 'block', backgroundColor: blue[900], marginLeft: 2,width:110
                                 }}
-                                onClick={() => navigate(`/react/login `)}
+                                onClick={() => navigate(`/login `)}
 
                             >
                                 Connexion
@@ -111,11 +112,23 @@ export default function HeaderPhone() {
                                 sx={{
                                     my: 2, color: 'white', display: 'block', backgroundColor: blue[900], marginLeft: 2
                                 }}
-                                onClick={() => navigate(`/react/panier`)}
+                                onClick={() => navigate(`/panier`)}
 
                             >
                                 <ShoppingCartIcon/>
                             </Button>
+                            <Button
+                                variant="contained"
+                                sx={{
+                                    my: 2, color: 'white', display: 'block', backgroundColor: blue[900], marginLeft: 2
+                                }}
+                                onClick={() => navigate(`/profile`)}
+
+                            >
+                                <AccountCircleIcon/>
+                            </Button>
+
+
                         </> : <>
                             <Button
                                 variant="contained"
@@ -132,7 +145,7 @@ export default function HeaderPhone() {
                                 sx={{
                                     my: 2, color: 'white', display: 'block', backgroundColor: blue[900], marginLeft: 2
                                 }}
-                                onClick={() => navigate(`/react/login`)}
+                                onClick={() => navigate(`/login`)}
 
                             >
                                 Connexion

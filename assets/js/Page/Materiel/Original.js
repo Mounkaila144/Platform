@@ -19,7 +19,7 @@ const Original = () => {
     const [page, setPage] = React.useState(1);
 
 
-    const url=`https://platform.allcine227.com/api/articles.json?page=${page}`
+    const url=`https://127.0.0.1:8000/api/articles.json?page=${page}`
     const getData =async () => {
         axios
             .get(url,{

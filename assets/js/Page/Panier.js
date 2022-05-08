@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useCart} from "react-use-cart";
 import axios from "axios";
 import Button from "@mui/material/Button";
-import {useAuthUser} from "react-auth-kit";
+import {useAuthHeader, useAuthUser} from "react-auth-kit";
 import Card from "@mui/material/Card";
 import {Alert, AlertTitle, Badge, Grid, Stack} from "@mui/material";
 import CardContent from "@mui/material/CardContent";
@@ -18,15 +18,19 @@ import {orange} from "@mui/material/colors";
 
 function Panier() {
     const auth = useAuthUser()
+    const authHeader = useAuthHeader()
+
     const [aalert,setAlert]=useState(false)
     const [c, setC] = useState(0);
-    const url = `https://platform.allcine227.com/api/commandes`
+    const url = `https://127.0.0.1:8000/api/commandes`
     const token = localStorage.getItem('token')
     const headers = {
         'authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
         'Accept': 'application/json'
     }
+    console.log(auth)
+    console.log(authHeader)
 
     const onSubmit = (e) => {
         e.preventDefault()

@@ -23,5 +23,20 @@ class FileController extends AbstractController
             return new JsonResponse(null, 404);
         }
     }
+    #[Route('/profile/{img}', name: 'image')]
+    public function profile($img): Response
+    {
+        //Récupération du dossier racine grace au kernel et ensuite ajout de l'emplacement du
+        //fichier
+        $filename = $this->getParameter('kernel.project_dir') . '/public/images/profile/' . $img;
+        //Si le fichier existe alors on le renvoi, sinon retour 404
+        if (file_exists($filename)) {
+            //retour d'un new BinaryFileResponse avec le nom du fichier
+            return new BinaryFileResponse($filename);
+        } else {
+            return new JsonResponse(null, 404);
+        }
+    }
+
 
 }

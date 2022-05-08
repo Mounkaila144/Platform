@@ -49,12 +49,7 @@ const AppBar = styled(MuiAppBar, {
         }),
     }),
 }));
-const pages = {
-    "name": ["Materiel", "serie", "Film"],
-    "Materiel": ["top", "cable", "clavier"],
-    "serie": ["Film", "top", "new", "popular"],
-    "Film": ["Serie", "top", "new", "popular"]
-};
+
 
 
 const DrawerHeader = styled('div')(({theme}) => ({
@@ -95,16 +90,16 @@ export default function HeaderDesing(props) {
     };
 
     const menu = () => {
-        navigate(`/react/menu `)
+        navigate(`/menu `)
         setOpen(false);
     };
     const article = () => {
-        navigate(`/react/materiel/original `)
+        navigate(`/materiel/original `)
         setOpen(false);
     };
 
     const login = () => {
-        navigate(`/react/login `)
+        navigate(`/login `)
         setOpen(false);
     };
 

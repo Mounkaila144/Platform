@@ -55,11 +55,11 @@ export default function Login() {
     const onSubmit = (e) => {
    setC(c+1)
         e.preventDefault()
-        axios.post('https://platform.allcine227.com/api/login_check', formData)
+        axios.post('https://127.0.0.1:8000/api/login_check', formData)
             .then((res) => {
-                console.log(res)
                 if (res.status === 200) {
 
+                    localStorage.setItem('id',res.data.data.id)
                     localStorage.setItem('token', res.data.token)
                     if (signIn({
                         token: res.data.token,

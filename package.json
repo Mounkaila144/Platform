@@ -39,6 +39,7 @@
         "babel-preset-env": "^1.7.0",
         "bootstrap": "^5.1.3",
         "cssnano": "^5.0.17",
+        "material-ui-player": "^1.0.6",
         "material-ui-popup-state": "^2.0.0",
         "mdbreact": "^5.2.0",
         "moment": "^2.29.1",

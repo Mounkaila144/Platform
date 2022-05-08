@@ -15,7 +15,7 @@
         </tr>
         <tr>
             <th>Prenom</th>
-            <td>{{ client.prenom }}</td>
+            <td>{{ client.username }}</td>
         </tr>
         <tr>
             <th>Email</th>
@@ -28,10 +28,6 @@
         <tr>
             <th>Adresse</th>
             <td>{{ client.adresse }}</td>
-        </tr>
-        <tr>
-            <th>Localisation</th>
-            <td><a href="{{ path('admin_client_show', {'id': client.id}) }}"><button type="submit" class="btn btn-primary me-2">Localiser</button></a></td>
         </tr>
 
 

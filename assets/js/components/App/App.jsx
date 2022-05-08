@@ -6,7 +6,6 @@ import ReactPaginate from "react-paginate";
 import {Pagination} from "@mui/material";
 import axios from "axios";
 import {Route} from "react-router-dom";
-import GenreFilm from "../../Page/Video/Film/GenreFilm";
 
 const App = () => {
     const [name, setName] = useState("mkl");

@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ReactController extends AbstractController
 {
     /**
-     * @Route("/react/{reactRouting}", name="home", defaults={"reactRouting": null})
+     * @Route("/mklbbc/{reactRouting}", name="home",priority="-1",requirements={"reactRouting"=".+"}, defaults={"reactRouting": null})
      */
     public function index(): Response
     {
@@ -18,44 +18,5 @@ class ReactController extends AbstractController
 
         ]);
     }
-    /**
-     * @Route("/react/login/{reactRouting}", name="login", defaults={"reactRouting": null})
-     */
-    public function login(): Response
-    {
-        return $this->render('react/index.html.twig', [
-
-        ]);
-    }
-
-    /**
-     * @Route("materiel/{reactRouting}", name="materiel", defaults={"reactRouting": null})
-     */
-    public function materiel(): Response
-    {
-        return $this->render('react/index.html.twig', [
-
-        ]);
-    }
-
-    /**
-     * @Route("film/{reactRouting}", name="film", defaults={"reactRouting": null})
-     */
-    public function film(): Response
-    {
-        return $this->render('react/index.html.twig', [
-
-        ]);
-    }
-    /**
-     * @Route("serie/{reactRouting}", name="serie", defaults={"reactRouting": null})
-     */
-    public function serie(): Response
-    {
-        return $this->render('react/index.html.twig', [
-
-        ]);
-    }
-
 
 }
