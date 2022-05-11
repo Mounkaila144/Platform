@@ -23,7 +23,7 @@ class FileController extends AbstractController
             return new JsonResponse(null, 404);
         }
     }
-    #[Route('/profile/{img}', name: 'image')]
+    #[Route('/profile/{img}', name: 'profile')]
     public function profile($img): Response
     {
         //Récupération du dossier racine grace au kernel et ensuite ajout de l'emplacement du

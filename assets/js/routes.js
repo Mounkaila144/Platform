@@ -10,23 +10,23 @@ import Menu from "./Page/Menu";
 import TemplateOut from "./Page/TemplateOut";
 import Template from "./Page/Template";
 import Profile from "./Page/Profile";
+import MainLayout from "./layout/MainLayout";
 
 
 const RouteApp = () => {
     const [token, setToken] = useState([]);
     let params = useParams();
     return (
-        <BrowserRouter>
             <Routes>
 
-                <Route path={"/*"} element={<App/>}/>
+                <Route path={"/*"} element={<MainLayout/>}/>
                 <Route path="materiel" element={<TemplateOut/>}>
                     <Route path={"original"} element={<Original/>}/>
                     <Route path={":id"} element={<DetailMateriel/>}/>
 
                 </Route>
                 <Route path="login" element={<Template content={<Login token={token} setToken={setToken}/>}/>}/>
-                <Route path="menu" element={<Template content={<Menu/>}/>}/>
+                <Route path="menu" element={<Menu/>}/>
                 <Route path={"panier"}
                        element={
                            <RequireAuth loginPath={'login'}>
@@ -36,7 +36,6 @@ const RouteApp = () => {
                 <Route path={"/profile"} element={<Template content={<Profile/>}/>}/>
 
             </Routes>
-        </BrowserRouter>
     );
 };
 

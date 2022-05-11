@@ -1,19 +1,36 @@
-import React, {useEffect, useState} from "react";
-import {render} from "react-dom";
-import RouteApp from "./routes";
+import ReactDOM from 'react-dom';
+
+// third party
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
+// project imports
+import * as React from 'react';
+import Bpp from './Bpp';
+import { store } from './store';
+
+// style + assets
+import './assets/scss/style.scss';
 import {CartProvider} from "react-use-cart";
 import {AuthProvider} from "react-auth-kit";
 
-const rootElement = document.getElementById("root");
+// ==============================|| REACT DOM RENDER  ||============================== //
 
-render(
-    <AuthProvider authType={'cookie'}
-                  authName={'_auth'}
-                  cookieDomain={window.location.hostname}
-                  cookieSecure={window.location.protocol === "https:"}>
-        <CartProvider>
-            <RouteApp/>
-        </CartProvider>
-    </AuthProvider>,
-    rootElement
+ReactDOM.render(
+    <Provider store={store}>
+        <AuthProvider authType={'cookie'}
+                      authName={'_auth'}
+                      cookieDomain={window.location.hostname}
+                      cookieSecure={window.location.protocol === "https:"}>
+            <CartProvider>
+                <BrowserRouter>
+                    <Bpp />
+                </BrowserRouter>
+            </CartProvider>
+        </AuthProvider>
+    </Provider>,
+    document.getElementById('root')
 );
+
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
