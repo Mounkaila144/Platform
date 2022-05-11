@@ -55,7 +55,7 @@ export default function Login() {
     const onSubmit = (e) => {
    setC(c+1)
         e.preventDefault()
-        axios.post('https://platform.allcine227.com/api/login_check', formData)
+        axios.post('https://ptr.allcine227.com/api/login_check', formData)
             .then((res) => {
                 if (res.status === 200) {
 

@@ -47,7 +47,7 @@ export default function ArticleCard({products}) {
             <CardMedia
                 height="194"
                 component="img"
-                image={`https://platform.allcine227.com/image/${products.imageName}`}
+                image={`https://ptr.allcine227.com/image/${products.imageName}`}
                 alt="green iguana"
             />
             <CardContent>

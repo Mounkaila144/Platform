@@ -22,7 +22,7 @@ function Panier() {
 
     const [aalert,setAlert]=useState(false)
     const [c, setC] = useState(0);
-    const url = `https://platform.allcine227.com/api/commandes`
+    const url = `https://ptr.allcine227.com/api/commandes`
     const token = localStorage.getItem('token')
     const headers = {
         'authorization': `Bearer ${token}`,

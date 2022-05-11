@@ -28,7 +28,7 @@ function Profile() {
     const [c, setC] = useState(0);
     const token = localStorage.getItem('token')
     const id = localStorage.getItem('id')
-    const url = `https://platform.allcine227.com/api/users/${id}`
+    const url = `https://ptr.allcine227.com/api/users/${id}`
 
 
     const getData =async () => {

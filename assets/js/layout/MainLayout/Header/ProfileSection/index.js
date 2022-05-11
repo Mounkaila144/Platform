@@ -70,7 +70,7 @@ const ProfileSection = () => {
     const [c, setC] = useState(0);
     const token = localStorage.getItem('token')
     const id = localStorage.getItem('id')
-    const url = `https://platform.allcine227.com/api/users/${id}`
+    const url = `https://ptr.allcine227.com/api/users/${id}`
 
 
     const getData = async () => {
@@ -163,7 +163,7 @@ const ProfileSection = () => {
                 }}
                 icon={
                     <Avatar
-                        src={`https://platform.allcine227.com/profile/${product.imageName}`}
+                        src={`https://ptr.allcine227.com/profile/${product.imageName}`}
                         sx={{
                             ...theme.typography.mediumAvatar,
                             margin: '8px 0 8px 8px !important',
@@ -222,7 +222,7 @@ const ProfileSection = () => {
 
                                                 <Avatar
                                                     alt="Remy Sharp"
-                                                    src={`https://platform.allcine227.com/profile/${product.imageName}`}
+                                                    src={`https://ptr.allcine227.com/profile/${product.imageName}`}
                                                     style={{alignSelf: "center"}}
                                                     sx={{width: 80, height: 80, marginTop: 2, marginLeft: 1}}
                                                 />
