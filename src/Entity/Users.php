@@ -40,27 +40,11 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 20)]
     private $nom;
 
-    #[ORM\Column(type: 'string', length: 50)]
-    private $adresse;
-
     #[ORM\Column(type: 'string', length: 20)]
     private $telephone;
 
-    #[ORM\Column(type: 'integer')]
-    private $solde=5000;
-
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
-
-    /**
-     * NOTE: This is not a mapped field of entity metadata, just a simple property.
-     */
-    #[Vich\UploadableField(mapping: 'profile_image', fileNameProperty: 'imageName')]
-    private ?File $imageFile = null;
-
-    #[ORM\Column(type: 'string',nullable: true)]
-    private ?string $imageName = null;
-
 
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Commande::class, orphanRemoval: true)]
@@ -171,18 +155,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getAdresse(): ?string
-    {
-        return $this->adresse;
-    }
-
-    public function setAdresse(string $adresse): self
-    {
-        $this->adresse = $adresse;
-
-        return $this;
-    }
-
     public function getTelephone(): ?string
     {
         return $this->telephone;
@@ -191,18 +163,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     public function setTelephone(string $telephone): self
     {
         $this->telephone = $telephone;
-
-        return $this;
-    }
-
-    public function getSolde(): ?int
-    {
-        return $this->solde;
-    }
-
-    public function setSolde(int $solde): self
-    {
-        $this->solde = $solde;
 
         return $this;
     }
@@ -248,33 +208,5 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-    /**
-     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
-     * of 'UploadedFile' is injected into this setter to trigger the update. If this
-     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
-     * must be able to accept an instance of 'File' as the bundle will inject one here
-     * during Doctrine hydration.
-     *
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
-     */
-    public function setImageFile(?File $imageFile = null): void
-    {
-        $this->imageFile = $imageFile;
 
-    }
-
-    public function getImageFile(): ?File
-    {
-        return $this->imageFile;
-    }
-
-    public function setImageName(?string $imageName): void
-    {
-        $this->imageName = $imageName;
-    }
-
-    public function getImageName(): ?string
-    {
-        return $this->imageName;
-    }
 }

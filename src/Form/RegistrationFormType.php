@@ -20,17 +20,8 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('email')
             ->add('username')
-            ->add('imageFile', VichFileType::class, [
-                'required' => false,
-                'allow_delete' => true,
-                'delete_label' => '...',
-                'download_uri' => '...',
-                'download_label' => '...',
-                'asset_helper' => true,
-            ])
             ->add('nom')
             ->add('telephone')
-            ->add('adresse')
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
